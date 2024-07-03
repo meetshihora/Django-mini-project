@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic data</title>
+</head>
+<body>
+    <center>
+    <h1>Dynamic data</h1>
+    <table border="1" width="50%" cellspacing="0" style="text-align: center;" >
+        <tr>
+            <th>name</th>
+            <th>roll</th>
+            <th>city</th>
+        </tr>
+        {% for n in datadetail %}
+            <tr>
+                <td>{{n.name}}</td>
+                <td>{{n.roll}}</td>
+                <td>{{n.city}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>
