@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+</head>
+<body>
+    <center>
+        {% if messages %}
+            {% for i in messages %}
+                <p style="width: 500px; padding: 2rem; background-color: rgba(0, 128, 0, 0.459); border-radius: 10px;">{{i}}</p>
+            {% endfor %}
+        {% endif %}
+        <div style="border: 1px solid black; width: 500px; margin-top: 5rem; padding: 2rem;">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="url" name="url" value="{{url}}" placeholder="Enter your link here" style="width: 100%; padding: 0.5rem;" ><br>
+                <input type="submit" value="Shorten" style="margin-top: 1rem; padding: 0.5rem; width: 100%;">
+            </form>
+        </div>
+
+
+        {% if short_url %}
+            <p style="width: 500px; margin-top: 1rem; padding: 0.5rem 1rem; background-color: rgba(0, 128, 0, 0.459); border-radius: 10px ">{{short_url}}</p>
+        {% endif %}
+        </center>
+
+</body>
+</html>
